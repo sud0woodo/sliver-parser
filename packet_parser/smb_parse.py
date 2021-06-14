@@ -221,6 +221,8 @@ class SMB:
 
                 if b'\xfeSMB' in tcp.data[4:9]:
                     self.smb_packet = io.BytesIO(tcp.data[4:])
+                else:
+                    continue
 
                 smb_header = self.parse_header()
                 
