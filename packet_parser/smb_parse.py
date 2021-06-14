@@ -1,3 +1,4 @@
+from collections import defaultdict
 import ctypes
 from enum import IntEnum
 import hashlib
