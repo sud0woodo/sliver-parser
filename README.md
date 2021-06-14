@@ -10,7 +10,19 @@ Before executing the script, the Python protobuf files need to be compiled using
 Assuming the current working directory is the root of this project:
 
 ```sh
-protoc -I=sliver-parser/protobuf/ --python_out=. sliver-parser/protobuf/*.proto
+protoc -I=protofiles/ --python_out=protofiles/ protofiles/*.proto
+```
+
+This is entirely due to my lack of understanding how this exactly works, but after the `protoc` command we need to patch the `common_pb2.py` file and change the following line:
+
+```py
+import common_pb2.py as common__pb2
+```
+
+to:
+
+```py
+from protofiles import common_pb2 as common__pb2
 ```
 
 Install the Python packages:
