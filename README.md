@@ -13,7 +13,7 @@ Assuming the current working directory is the root of this project:
 protoc -I=protofiles/ --python_out=protofiles/ protofiles/*.proto
 ```
 
-This is entirely due to my lack of understanding how this exactly works, but after the `protoc` command we need to patch the `common_pb2.py` file and change the following line:
+This is entirely due to my lack of understanding how this exactly works, but after the `protoc` command we need to patch the `sliver_pb2.py` file and change the following line:
 
 ```py
 import common_pb2.py as common__pb2
